@@ -10,11 +10,14 @@ namespace LonghornMusic.Models
     // You can add profile data for the user by adding more properties to your AppUser class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class AppUser : IdentityUser
     {
-        //TODO: Put any additional fields that you need for your users here
-        //For example:
-        //public String FName { get; set; }
-        //public String LName { get; set; }
-
+        //TODO: Make sure all necessary fields are here 
+        public string FName { get; set; }
+        public string LName { get; set; }
+        //TODO: Make sure these are in the right place
+        public string Zip { get; set; }
+        public string State { get; set; }
+        public string City { get; set; }
+        public string Address { get; set; }
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<AppUser> manager)
         {
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);

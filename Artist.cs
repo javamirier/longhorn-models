@@ -8,6 +8,8 @@ namespace LonghornMusic.Models
 {
     public class Artist
     {
+        [Required(ErrorMessage = "Missing Artist ID")]
+        [Display(Name = "Artist ID")]
         public Int32 ArtistId { get; set; }
 
         [Display(Name = "Artist Name")]

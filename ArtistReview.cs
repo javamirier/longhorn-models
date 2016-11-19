@@ -8,6 +8,8 @@ namespace LonghornMusic.Models
 {
     public class ArtistReview
     {
+        [Required(ErrorMessage = "Missing Artist Review ID")]
+        [Display(Name = "Artist Review ID")]
         public Int32 ArtistReviewId { get; set; }
 
         [Required(ErrorMessage="Please select a score.")]

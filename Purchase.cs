@@ -14,7 +14,7 @@ namespace LonghornMusic.Models
 
         [Required(ErrorMessage="Date Missing")]
         [Display(Name="Purchase Date")]
-        //Might want to add the string format line from HW7
+        //TODO: Add string format from HW7? 
         public DateTime Date { get; set; }
 
         [Required(ErrorMessage="Price Missing")]
