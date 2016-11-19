@@ -33,9 +33,9 @@ namespace LonghornMusic.Models
         [Display(Name="Is Complete")]
         public bool IsComplete { get; set; }
         
-        //TODO: Make changes to controller to accomodate PurchaseUserDetails nav property
+        //TODO: Make changes to controller to accomodate PurchaseUserDetail nav property
         [Display(Name="Purchase User Details")]
-        public virtual PurchaseUserDetails PurchaseUserDetails { get; set; }
+        public virtual PurchaseUserDetail PurchaseUserDetail { get; set; }
 
         [Display(Name="Recipient")]
         public virtual AppUser Recipient { get; set; }

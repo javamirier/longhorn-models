@@ -23,7 +23,7 @@ namespace LonghornMusic.Models
         public List<string> CreditCards { get; set; } 
         public virtual List<Review> CustomerReviews { get; set; }
         public virtual List<Song> MusicOwned { get; set; }
-        public virtual List<PurchaseUserDetails> OrderHistory { get; set; }
+        public virtual List<PurchaseUserDetail> OrderHistory { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<AppUser> manager)
         {

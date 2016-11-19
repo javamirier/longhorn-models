@@ -7,11 +7,11 @@ using System.ComponentModel.DataAnnotations;
 
 namespace LonghornMusic.Models
 {
-    public class PurchaseUserDetails
+    public class PurchaseUserDetail
     {
         [Display(Name ="Purchase Credit Card ID")]
         [Required(ErrorMessage ="Missing PCC ID")]
-        public Int32 PurchaseCreditCardId { get; set; }
+        public Int32 PurchaseUserDetailId { get; set; }
 
         [Display(Name = "Purchase Credit Card")]
         [Required(ErrorMessage = "Missing PCC")]
