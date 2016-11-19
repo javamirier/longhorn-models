@@ -15,6 +15,7 @@ namespace LonghornMusic.Models
         public string FName { get; set; }
         public string LName { get; set; }
         //TODO: Make sure these are in the right place
+        //TODO: Make changes to controller to accomodate PurchaseUserDetail nav property 
         public string Zip { get; set; }
         public string State { get; set; }
         public string City { get; set; }
@@ -22,7 +23,8 @@ namespace LonghornMusic.Models
         public List<string> CreditCards { get; set; } 
         public virtual List<Review> CustomerReviews { get; set; }
         public virtual List<Song> MusicOwned { get; set; }
-        public virtual List<Purchase> OrderHistory { get; set; }
+        public virtual List<PurchaseUserDetails> OrderHistory { get; set; }
+
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<AppUser> manager)
         {
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);

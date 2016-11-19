@@ -18,7 +18,7 @@ namespace LonghornMusic.Models
         public string SongReviewText { get; set; }
 
         [Display(Name = "Review Author")]
-        public virtual Customer SongReviewAuthor { get; set; }
+        public virtual AppUser SongReviewAuthor { get; set; }
 
         [Display(Name = "Song")]
         public virtual Song ReviewedSong { get; set; }

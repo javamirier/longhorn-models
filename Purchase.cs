@@ -9,6 +9,7 @@ namespace LonghornMusic.Models
 {
     public class Purchase
     {
+        //TODO: Add boolean value for IsGift? 
         [Display(Name="Purchase ID")]
         public  Int32 PurchaseId { get; set; }
 
@@ -31,11 +32,12 @@ namespace LonghornMusic.Models
 
         [Display(Name="Is Complete")]
         public bool IsComplete { get; set; }
-
-        [Display(Name="Purchaser")]
-        public virtual Customer Purchaser { get; set; }
+        
+        //TODO: Make changes to controller to accomodate PurchaseUserDetails nav property
+        [Display(Name="Purchase User Details")]
+        public virtual PurchaseUserDetails PurchaseUserDetails { get; set; }
 
         [Display(Name="Recipient")]
-        public virtual Customer Recipient { get; set; }
+        public virtual AppUser Recipient { get; set; }
     }
 }
