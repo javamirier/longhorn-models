@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System.Collections.Generic;
 
 //TODO: Change the namespace here to match your project's name
 namespace LonghornMusic.Models
@@ -18,6 +19,10 @@ namespace LonghornMusic.Models
         public string State { get; set; }
         public string City { get; set; }
         public string Address { get; set; }
+        public List<string> CreditCards { get; set; } 
+        public virtual List<Review> CustomerReviews { get; set; }
+        public virtual List<Song> MusicOwned { get; set; }
+        public virtual List<Purchase> OrderHistory { get; set; }
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<AppUser> manager)
         {
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
@@ -45,7 +50,18 @@ namespace LonghornMusic.Models
             return new AppDbContext();
         }
         
-        //Add dbSet for roles
-         public DbSet<AppRole> AppRoles { get; set; }
+        //TODO: Make sure all DbSets are here 
+        public DbSet<AppRole> AppRoles { get; set; }
+        public DbSet<Artist> Artists { get; set; }
+        public DbSet<ArtistReview> ArtistReviews { get; set; }
+        public DbSet<Song> Songs { get; set; }
+        public DbSet<SongReview> SongReviews { get; set; }
+        public DbSet<Album> Albums { get; set; }
+        public DbSet<AlbumReview> AlbumReviews { get; set; }
+        public DbSet<Review> Reviews { get; set; }
+        public DbSet<Genre> Genres { get; set; }
+        public DbSet<Purchase> Purchases { get; set; }
+        public DbSet<ItemDetail> ItemDetails { get; set; }
+        public DbSet<Promotion> Promotions { get; set; }
     }
 }
