@@ -11,6 +11,8 @@ namespace LonghornMusic.Models
         //TODO: Fix the bridge classes 
         public Int32 ReviewId { get; set; }
 
+        public AppUser Author { get; set; }
+
         public virtual List<SongReview> SongReviewsList { get; set; }
         
         public virtual List<AlbumReview> AlbumReviewsList { get; set; }
