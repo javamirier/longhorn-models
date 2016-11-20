@@ -8,6 +8,7 @@ namespace LonghornMusic.Models
 {
     public class SongReview
     {
+        //TODO: Fix this class 
         public Int32 SongReviewId { get; set; }
 
         [Required(ErrorMessage = "Please select a score.")]

@@ -8,6 +8,7 @@ namespace LonghornMusic.Models
 {
     public class Review
     {
+        //TODO: Fix the bridge classes 
         public Int32 ReviewId { get; set; }
 
         public virtual List<SongReview> SongReviewsList { get; set; }

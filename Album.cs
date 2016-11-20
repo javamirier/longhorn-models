@@ -17,6 +17,10 @@ namespace LonghornMusic.Models
         [Display(Name ="Album Name")]
         public string AlbumName { get; set; }
 
+        [Display(Name = "Album Price")]
+        [Required(ErrorMessage = "Missing Album Price")]
+        public decimal AlbumPrice { get; set; }
+
         [Required(ErrorMessage = "Missing Album Review List")]
         [Display(Name ="Album Reviews")]
         public virtual List<AlbumReview> AlbumReviews { get; set; }
