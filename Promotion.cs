@@ -15,13 +15,16 @@ namespace LonghornMusic.Models
         [Display(Name="Dicsount Percentage")]
         public Decimal DiscountPercentage { get; set; }
 
-        [Display(Name="Promotional Item")]
-        public virtual ItemDetail Item { get; set; }
+        [Display(Name="Promotional Songs")]
+        public virtual List<Song> DiscountedSongs { get; set; }
+
+        [Display(Name = "Promotional Albums")]
+        public virtual List<Album> DiscountedAlbums { get; set; }
 
         [Display(Name="Is Active")]
         public bool IsActive { get; set; }
 
         [Display(Name="Is Featured")]
-        public bool ISFeatured { get; set; }
+        public bool IsFeatured { get; set; }
     }
 }
