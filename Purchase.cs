@@ -18,24 +18,24 @@ namespace LonghornMusic.Models
         //TODO: Add string format from HW7? 
         public DateTime Date { get; set; }
 
-        [Required(ErrorMessage="Price Missing")]
-        [Display(Name="Total Purchase Price")]
-        public Decimal TotalPrice { get; set; }
+        [Required(ErrorMessage="Subtotal Missing")]
+        [Display(Name="Subtotal")]
+        public Decimal Subtotal { get; set; }
 
         [Required(ErrorMessage="Incomplete Item List")]
         [Display(Name="ItemDetails")]
         public List<ItemDetail> ItemDetails { get; set; }
 
-        [Required(ErrorMessage="Tax Missing")]
-        [Display(Name="Purchase Tax")]
-        public Decimal Tax { get; set; }
+        //[Required(ErrorMessage="Tax Missing")]
+        //[Display(Name="Purchase Tax")]
+        //public Decimal Tax { get; set; }
 
         [Display(Name="Is Complete")]
         public bool IsComplete { get; set; }
         
         //TODO: Make changes to controller to accomodate PurchaseUserDetail nav property
         [Display(Name="Purchase User Details")]
-        public virtual PurchaseUserDetail PurchaseUserDetail { get; set; }
+        public virtual List<PurchaseUserDetail> PurchaseUserDetail { get; set; }
 
         [Display(Name="Recipient")]
         public virtual AppUser Recipient { get; set; }
