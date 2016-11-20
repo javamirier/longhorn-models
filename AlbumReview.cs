@@ -21,6 +21,6 @@ namespace LonghornMusic.Models
         public virtual Review Review { get; set; }
 
         [Display(Name = "Album")]
-        public virtual Album ReviewedAlbum { get; set; }
+        public virtual Album AlbumToBeReviewed { get; set; }
     }
 }
