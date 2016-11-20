@@ -21,7 +21,6 @@ namespace LonghornMusic.Models
         [Required(ErrorMessage = "Missing Album Price")]
         public decimal AlbumPrice { get; set; }
 
-        [Required(ErrorMessage = "Missing Album Review List")]
         [Display(Name ="Album Reviews")]
         public virtual List<AlbumReview> AlbumReviews { get; set; }
 
@@ -36,5 +35,7 @@ namespace LonghornMusic.Models
         [Required(ErrorMessage = "Missing Album Genre List")]
         [Display(Name ="Album Genres")]
         public virtual List<Genre> AlbumGenres { get; set; }
+
+        public virtual ItemDetail AlbumDetail { get; set; }
     }
 }

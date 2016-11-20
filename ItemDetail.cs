@@ -15,6 +15,8 @@ namespace LonghornMusic.Models
         [Display(Name="Purchase Price")]
         public Decimal PurchasePrice { get; set; }
 
+        public Purchase Purchase { get; set; }
+
         [Display(Name="Song")]
         public virtual Song Song { get; set; }
 

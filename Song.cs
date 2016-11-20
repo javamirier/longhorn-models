@@ -29,10 +29,14 @@ namespace LonghornMusic.Models
         [Required(ErrorMessage = "Missing Song Artists List")]
         public virtual List<Artist> SongArtists { get; set; }
 
-        public virtual List<Album> SongAlbums { get; set; }
+        [Display(Name = "Album")]
+        public virtual Album SongAlbum { get; set; }
 
         [Display(Name = "Song Genres")]
         [Required(ErrorMessage = "Missing Song Genres List")]
         public virtual List<Genre> SongGenres { get; set; }
+
+        public virtual ItemDetail SongDetail { get; set; }
+
     }
 }
