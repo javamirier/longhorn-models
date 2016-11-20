@@ -17,10 +17,10 @@ namespace LonghornMusic.Models
         [Display(Name = "Review Text (optional)")]
         public string AlbumReviewText { get; set; }
 
-        [Display(Name = "Review Author")]
-        public virtual AppUser AlbumReviewAuthor { get; set; }
+        [Display(Name = "Album Review")]
+        public virtual Review Album_Review { get; set; }
 
         [Display(Name = "Album")]
-        public virtual Artist ReviewedAlbum { get; set; }
+        public virtual Album ReviewedAlbum { get; set; }
     }
 }

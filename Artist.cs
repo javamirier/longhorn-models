@@ -8,6 +8,7 @@ namespace LonghornMusic.Models
 {
     public class Artist
     {
+        //TODO: Fix the fucking models 
         [Required(ErrorMessage = "Missing Artist ID")]
         [Display(Name = "Artist ID")]
         public Int32 ArtistId { get; set; }
@@ -20,6 +21,7 @@ namespace LonghornMusic.Models
         //public Int32 ArtistSales { get; set; }
 
         [Display(Name = "Artist Genres")]
+        [Required(ErrorMessage ="Missing Artist Genre(s)")]
         public List<Genre> ArtistGenres { get; set; }
 
         [Display(Name = "Artist Rating")]
