@@ -21,7 +21,8 @@ namespace LonghornMusic.Models
         [Required(ErrorMessage = "Missing Song Price")]
         public decimal SongPrice { get; set; }
 
-        //TODO: Have calculated fields like Revenue, NumSold, Rating? 
+        //TODO: Have calculated fields like Revenue, NumSold <-- in controller
+        public decimal SongRating { get; set; }
 
         public virtual List<SongReview> SongReviews { get; set; }
 
@@ -36,7 +37,7 @@ namespace LonghornMusic.Models
         [Required(ErrorMessage = "Missing Song Genres List")]
         public virtual List<Genre> SongGenres { get; set; }
 
-        public virtual List<ItemDetail> SongPurhcaseDetails { get; set; }
+        public virtual List<ItemDetail> SongPurchaseDetail { get; set; }
 
     }
 }
