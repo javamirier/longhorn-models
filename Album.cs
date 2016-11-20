@@ -36,6 +36,6 @@ namespace LonghornMusic.Models
         [Display(Name ="Album Genres")]
         public virtual List<Genre> AlbumGenres { get; set; }
 
-        public virtual ItemDetail AlbumDetail { get; set; }
+        public virtual List<ItemDetail> AlbumPurchaseDetails { get; set; }
     }
 }
