@@ -65,5 +65,6 @@ namespace LonghornMusic.Models
         public DbSet<Purchase> Purchases { get; set; }
         public DbSet<ItemDetail> ItemDetails { get; set; }
         public DbSet<Promotion> Promotions { get; set; }
+        public DbSet<PurchaseUserDetail> PurchaseUserDetails { get; set; }
     }
 }
