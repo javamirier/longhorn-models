@@ -37,5 +37,14 @@ namespace LonghornMusic.Models
         public virtual List<Genre> AlbumGenres { get; set; }
 
         public virtual List<ItemDetail> AlbumPurchaseDetails { get; set; }
+
+        public Album()
+        {
+            this.AlbumReviews = new List<Models.AlbumReview>();
+            this.AlbumArtists = new List<Models.Artist>();
+            this.AlbumSongs = new List<Models.Song>();
+            this.AlbumGenres = new List<Models.Genre>();
+            this.AlbumPurchaseDetails = new List<Models.ItemDetail>();
+        }
     }
 }

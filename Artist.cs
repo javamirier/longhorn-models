@@ -30,7 +30,16 @@ namespace LonghornMusic.Models
         public virtual List<ArtistReview> ArtistReviews { get; set; }
 
         public virtual List<Album> ArtistAlbums { get; set; }
-
+        
         public virtual List<Song> ArtistSongs { get; set; }
+
+        //TODO: Jesus take the keyboard im typin blind https://piazza.com/class/iry0whqtflz28x?cid=437
+        public Artist()
+        {
+            this.ArtistReviews = new List<Models.ArtistReview>();
+            this.ArtistAlbums = new List<Models.Album>();
+            this.ArtistSongs = new List<Models.Song>();
+            this.ArtistGenres = new List<Models.Genre>();
+        }
     }
 }

@@ -25,5 +25,12 @@ namespace LonghornMusic.Models
         
         [Display(Name = "Genre Artists")]
         public virtual List<Artist> Artists { get; set; }
+
+        public Genre()
+        {
+            this.Songs = new List<Models.Song>();
+            this.Albums = new List<Models.Album>();
+            this.Artists = new List<Models.Artist>();
+        }
     }
 }

@@ -37,7 +37,17 @@ namespace LonghornMusic.Models
         [Required(ErrorMessage = "Missing Song Genres List")]
         public virtual List<Genre> SongGenres { get; set; }
 
-        public virtual List<ItemDetail> SongPurchaseDetail { get; set; }
+        public virtual List<ItemDetail> SongPurchaseDetails { get; set; }
+
+        //TODO: Jesus take the keyboard im typin blind 
+        public Song()
+        {
+            this.SongReviews = new List<Models.SongReview>();
+            this.SongArtists = new List<Models.Artist>();
+            this.SongAlbums = new List<Models.Album>();
+            this.SongGenres = new List<Models.Genre>();
+            this.SongPurchaseDetails = new List<Models.ItemDetail>();
+        }
 
     }
 }
