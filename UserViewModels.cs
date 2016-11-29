@@ -39,6 +39,19 @@ namespace LonghornMusic.Models
         public string ConfirmPassword { get; set; }
 
         //TODO: Add additional fields to register users here.
+
+        [Display(Name = "First Name")]
+        [Required(ErrorMessage = "First Name is required.")]
+        public string FName { get; set; }
+        
+        [Display(Name = "Last Name")]
+        [Required(ErrorMessage = "Last Name is required.")]
+        public string LName { get; set; }
+
+        [Display(Name = "Phone Number")]
+        [Required(ErrorMessage = "Phone Number is required.")]
+        public string PhoneNumber { get; set; }
+
     }
 
     public class ChangePasswordViewModel
