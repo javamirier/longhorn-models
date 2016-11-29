@@ -25,7 +25,7 @@ namespace LonghornMusic.Models
         public List<Genre> ArtistGenres { get; set; }
 
         [Display(Name = "Artist Rating")]
-        public Int32 ArtistRating { get; set; }
+        public decimal ArtistRating { get; set; }
 
         public virtual List<ArtistReview> ArtistReviews { get; set; }
 

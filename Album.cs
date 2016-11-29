@@ -24,6 +24,8 @@ namespace LonghornMusic.Models
         [Display(Name ="Album Reviews")]
         public virtual List<AlbumReview> AlbumReviews { get; set; }
 
+        public decimal AlbumRating { get; set; }
+
         [Required(ErrorMessage = "Missing Album Song List")]
         [Display(Name ="Album Songs")]
         public virtual List<Song> AlbumSongs { get; set; }
