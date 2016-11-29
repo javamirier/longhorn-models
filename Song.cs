@@ -30,6 +30,8 @@ namespace LonghornMusic.Models
         [Required(ErrorMessage = "Missing Song Artists List")]
         public virtual List<Artist> SongArtists { get; set; }
 
+        public string SongArtistString { get { return getArtistString(); } }
+
         [Display(Name = "Album")]
         public virtual List<Album> SongAlbums { get; set; }
 
@@ -47,6 +49,44 @@ namespace LonghornMusic.Models
             this.SongAlbums = new List<Models.Album>();
             this.SongGenres = new List<Models.Genre>();
             this.SongPurchaseDetails = new List<Models.ItemDetail>();
+        }
+
+
+        public string getArtistString()
+        {
+            string ArtistString;
+            if (this.SongArtists == null || this.SongArtists.Count == 0)
+            {
+                return "";
+            }
+            if (this.SongArtists.Count == 1) 
+            {
+                ArtistString = SongArtists.ElementAt(0).ArtistName;
+                return ArtistString;
+            }
+
+            if (SongArtists.Count == 2)
+            {
+                ArtistString = SongArtists.ElementAt(0).ArtistName + " ft. " + SongArtists.ElementAt(1).ArtistName;
+                return ArtistString;
+            }
+
+            else
+            {
+                string tempstring = SongArtists.ElementAt(0).ArtistName;
+
+                tempstring = tempstring + " ft. " + SongArtists.ElementAt(1);
+
+                foreach (Artist ArtistName in SongArtists.GetRange(2, SongArtists.Count - 1))
+                {
+                    tempstring = tempstring + ", " + ArtistName;
+                }
+
+                ArtistString = tempstring;
+
+                return ArtistString;
+            }
+
         }
 
     }
