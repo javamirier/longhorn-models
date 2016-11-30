@@ -70,16 +70,36 @@ namespace LonghornMusic.Models
                 ArtistString = SongArtists.ElementAt(0).ArtistName + " ft. " + SongArtists.ElementAt(1).ArtistName;
                 return ArtistString;
             }
+            if (SongArtists.Count == 3)
+            {
+                ArtistString = SongArtists.ElementAt(0).ArtistName + " ft. " + SongArtists.ElementAt(1).ArtistName + ", " + SongArtists.ElementAt(2).ArtistName;
+
+                return ArtistString;
+            }
 
             else
             {
                 string tempstring = SongArtists.ElementAt(0).ArtistName;
 
-                tempstring = tempstring + " ft. " + SongArtists.ElementAt(1);
+                tempstring = tempstring + " ft. " + SongArtists.ElementAt(1).ArtistName;
 
-                foreach (Artist ArtistName in SongArtists.GetRange(2, SongArtists.Count - 1))
+                List<Artist> temp = new List<Artist>();
+
+                temp.Add(SongArtists.ElementAt(0));
+                temp.Add(SongArtists.ElementAt(1));
+
+                foreach (Artist ArtistName in SongArtists)
                 {
-                    tempstring = tempstring + ", " + ArtistName;
+
+                    if (temp.Contains(ArtistName))
+                    {
+                        
+                    }
+                    else
+                    {
+                        tempstring = tempstring + ", " + ArtistName.ArtistName;
+                    }
+                    
                 }
 
                 ArtistString = tempstring;
