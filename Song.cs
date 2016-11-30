@@ -57,7 +57,7 @@ namespace LonghornMusic.Models
             string ArtistString;
             if (this.SongArtists == null || this.SongArtists.Count == 0)
             {
-                return "";
+                return "Artist Unknown";
             }
             if (this.SongArtists.Count == 1) 
             {
