@@ -32,6 +32,8 @@ namespace LonghornMusic.Models
 
         public string SongArtistString { get { return getArtistString(); } }
 
+        public string SongAlbumString { get { return getAlbumString(); } }
+
         [Display(Name = "Album")]
         public virtual List<Album> SongAlbums { get; set; }
 
@@ -57,7 +59,7 @@ namespace LonghornMusic.Models
             string ArtistString;
             if (this.SongArtists == null || this.SongArtists.Count == 0)
             {
-                return "Artist Unknown";
+                return "No Artist";
             }
             if (this.SongArtists.Count == 1) 
             {
@@ -108,6 +110,26 @@ namespace LonghornMusic.Models
             }
 
         }
+
+        public string getAlbumString()
+        {
+            if (this.SongArtists == null || this.SongArtists.Count == 0)
+            {
+                return "No Album";
+            }
+            else
+            {
+                string tempstring = "";
+                foreach (Album Album in SongAlbums)
+                {
+                    tempstring = tempstring + Album.AlbumName + ": ";
+                }
+                return tempstring;
+            }
+            
+
+        }
+
 
     }
 }
