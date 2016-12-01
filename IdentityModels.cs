@@ -20,7 +20,11 @@ namespace LonghornMusic.Models
         public string State { get; set; }
         public string City { get; set; }
         public string Address { get; set; }
-        public List<string> CreditCards { get; set; } 
+        //Get rid of this and replace with 2 strings 
+        //this is fucking bullshit 
+        //public List<string> CreditCards { get; set; } 
+        public string CreditCard1 { get; set; }
+        public string CreditCard2 { get; set; }
         public virtual List<Review> CustomerReviews { get; set; }
         public virtual List<Song> MusicOwned { get; set; }
         public virtual List<PurchaseUserDetail> OrderHistory { get; set; }
@@ -30,6 +34,8 @@ namespace LonghornMusic.Models
             this.CustomerReviews = new List<Models.Review>();
             this.MusicOwned = new List<Models.Song>();
             this.OrderHistory = new List<Models.PurchaseUserDetail>();
+            //Get rid of this because its a broken piece of shit 
+            //this.CreditCards = new List<string>();
         }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<AppUser> manager)

@@ -52,6 +52,21 @@ namespace LonghornMusic.Models
         [Required(ErrorMessage = "Phone Number is required.")]
         public string PhoneNumber { get; set; }
 
+        [Display(Name = "Address")]
+        [Required(ErrorMessage = "Address is required.")]
+        public string Address { get; set; }
+
+        [Display(Name = "City")]
+        [Required(ErrorMessage = "City is required.")]
+        public string City { get; set; }
+
+        [Display(Name = "State")]
+        [Required(ErrorMessage = "State is required.")]
+        public string State { get; set; }
+
+        [Display(Name = "Zip Code")]
+        [Required(ErrorMessage = "Zip Code is required.")]
+        public string Zip { get; set; }
     }
 
     public class ChangePasswordViewModel
@@ -71,6 +86,50 @@ namespace LonghornMusic.Models
         [Display(Name = "Confirm new password")]
         [Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+    }
+
+    public class ChangeInformationViewModel
+    {
+        [Required]
+        [EmailAddress]
+        [Display(Name = "Email")]
+        public string Email { get; set; }
+
+        //TODO: Add additional fields to register users here.
+
+        [Display(Name = "First Name")]
+        [Required(ErrorMessage = "First Name is required.")]
+        public string FName { get; set; }
+
+        [Display(Name = "Last Name")]
+        [Required(ErrorMessage = "Last Name is required.")]
+        public string LName { get; set; }
+
+        [Display(Name = "Phone Number")]
+        [Required(ErrorMessage = "Phone Number is required.")]
+        public string PhoneNumber { get; set; }
+
+        [Display(Name = "Address")]
+        [Required(ErrorMessage = "Address is required.")]
+        public string Address { get; set; }
+
+        [Display(Name = "City")]
+        [Required(ErrorMessage = "City is required.")]
+        public string City { get; set; }
+
+        [Display(Name = "State")]
+        [Required(ErrorMessage = "State is required.")]
+        public string State { get; set; }
+
+        [Display(Name = "Zip Code")]
+        [Required(ErrorMessage = "Zip Code is required.")]
+        public string Zip { get; set; }
+    }
+
+    public class CreditCardsViewModel
+    {
+        [Display(Name ="Credit Card Number")]
+        public string CardNumber { get; set; }
     }
 
     public class IndexViewModel
