@@ -26,5 +26,11 @@ namespace LonghornMusic.Models
 
         [Display(Name="Is Featured")]
         public bool IsFeatured { get; set; }
+
+        public Promotion()
+        {
+            this.DiscountedSongs = new List<Models.Song>();
+            this.DiscountedAlbums = new List<Models.Album>();
+        }
     }
 }

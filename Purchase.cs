@@ -39,5 +39,11 @@ namespace LonghornMusic.Models
 
         [Display(Name="Recipient")]
         public virtual AppUser Recipient { get; set; }
+
+        public Purchase()
+        {
+            this.ItemDetails = new List<Models.ItemDetail>();
+            this.PurchaseUserDetail = new List<Models.PurchaseUserDetail>();
+        }
     }
 }

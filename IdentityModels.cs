@@ -25,6 +25,13 @@ namespace LonghornMusic.Models
         public virtual List<Song> MusicOwned { get; set; }
         public virtual List<PurchaseUserDetail> OrderHistory { get; set; }
 
+        public AppUser()
+        {
+            this.CustomerReviews = new List<Models.Review>();
+            this.MusicOwned = new List<Models.Song>();
+            this.OrderHistory = new List<Models.PurchaseUserDetail>();
+        }
+
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<AppUser> manager)
         {
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
