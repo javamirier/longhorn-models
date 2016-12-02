@@ -11,7 +11,7 @@ namespace LonghornMusic.Models
     public class ItemDetail
     {
         [Display(Name="Item Detail Id")]
-        public Int32 ItemDetailId { get; set; }
+        public Int32 IDID { get; set; }
 
         [Display(Name="Purchase Price")]
         public Decimal PurchasePrice { get; set; }
@@ -23,5 +23,11 @@ namespace LonghornMusic.Models
 
         [Display(Name="Album")]
         public virtual Album Album { get; set; }
+
+        public ItemDetail()
+        {
+            Random random = new Random();
+            this.IDID = random.Next(10000000);
+        }
     }
 }
