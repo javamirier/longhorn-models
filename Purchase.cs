@@ -10,6 +10,7 @@ namespace LonghornMusic.Models
 {
     public class Purchase
     {
+        [Key]
         [Display(Name="Purchase ID")]
         public  Int32 PurchaseId { get; set; }
         
@@ -18,27 +19,23 @@ namespace LonghornMusic.Models
         
         [Display(Name="Subtotal")]
         public Decimal Subtotal { get; set; }
-
-        [ForeignKey("ItemDetailId")]
+        
         [Display(Name="ItemDetails")]
         public List<ItemDetail> ItemDetails { get; set; }
 
         [Display(Name="Is Complete")]
         public bool IsComplete { get; set; }
-
-        [ForeignKey("PurchaseUserDetailId")]
+        
         [Display(Name="Purchase User Details")]
-        public virtual PurchaseUserDetail PurchaseUserDetail { get; set; }
+        public virtual List<PurchaseUserDetail> PurchaseUserDetail { get; set; }
 
-        [ForeignKey("Id")]
         [Display(Name="Recipient")]
         public virtual AppUser Recipient { get; set; }
 
         public Purchase()
         {
-            Random random = new Random();
-            this.PurchaseId = random.Next(10000000);
             this.ItemDetails = new List<Models.ItemDetail>();
+            this.PurchaseUserDetail = new List<Models.PurchaseUserDetail>();
         }
     }
 }

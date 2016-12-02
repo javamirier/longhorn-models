@@ -17,21 +17,12 @@ namespace LonghornMusic.Models
         [Display(Name="Purchase Price")]
         public Decimal PurchasePrice { get; set; }
 
-        [ForeignKey("PurchaseId")]
         public Purchase Purchase { get; set; }
 
-        [ForeignKey("SongId")]
         [Display(Name="Song")]
         public virtual Song Song { get; set; }
 
-        [ForeignKey("Album")]
         [Display(Name="Album")]
         public virtual Album Album { get; set; }
-
-        public ItemDetail()
-        {
-            Random random = new Random();
-            this.ItemDetailId = random.Next(10000000);
-        }
     }
 }

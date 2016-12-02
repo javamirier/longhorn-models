@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
+
 
 namespace LonghornMusic.Models
 {
@@ -20,14 +20,76 @@ namespace LonghornMusic.Models
         public string Address { get; set; }
         public string CreditCard1 { get; set; }
         public string CreditCard2 { get; set; }
-        public string CreditCard1Type { get; set; }
-        public string CreditCard2Type { get; set; }
-        [ForeignKey("ReviewId")]
+        public string CreditCard1Type { get { return getCard1Type(); } }
+        public string CreditCard2Type { get { return getCard2Type(); } }
         public virtual List<Review> CustomerReviews { get; set; }
-        [ForeignKey("SongId")]
         public virtual List<Song> MusicOwned { get; set; }
-        [ForeignKey("PurchaseUserDetailId")]
         public virtual List<PurchaseUserDetail> OrderHistory { get; set; }
+
+        public string getCard1Type()
+        {
+            string cardtype;
+            if (this.CreditCard1 == null || this.CreditCard1.Length == 0)
+            {
+                return "No Card";
+            }
+            else
+            {
+                if (CreditCard1.Length == 15)
+                {
+                    return "AMEX";
+                }
+                if (CreditCard1.Length == 16 && CreditCard1[0] == 5 && CreditCard1[1] == 4)
+                {
+                    return "MasterCard";
+                }
+                if (CreditCard1.Length == 16 && CreditCard1[0] == 4)
+                {
+                    return "Visa";
+                }
+                if (CreditCard1.Length == 16 && CreditCard1[0] == 6)
+                {
+                    return "Discover";
+                }
+                else
+                {
+                    return "BAD CARD";
+                }
+            }
+
+        }
+        public string getCard2Type()
+        {
+            string cardtype;
+            if (this.CreditCard2 == null || this.CreditCard2.Length == 0)
+            {
+                return "No Card";
+            }
+            else
+            {
+                if (CreditCard2.Length == 15)
+                {
+                    return "AMEX";
+                }
+                if (CreditCard2.Length == 16 && CreditCard2[0] == 5 && CreditCard2[1] == 4)
+                {
+                    return "MasterCard";
+                }
+                if (CreditCard2.Length == 16 && CreditCard2[0] == 4)
+                {
+                    return "Visa";
+                }
+                if (CreditCard2.Length == 16 && CreditCard2[0] == 6)
+                {
+                    return "Discover";
+                }
+                else
+                {
+                    return "BAD CARD";
+                }
+            }
+
+        }
 
         public AppUser()
         {
