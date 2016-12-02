@@ -26,15 +26,16 @@ namespace LonghornMusic.Models
         public bool IsComplete { get; set; }
         
         [Display(Name="Purchase User Details")]
-        public virtual List<PurchaseUserDetail> PurchaseUserDetail { get; set; }
+        public virtual PurchaseUserDetail PurchaseUserDetail { get; set; }
 
         [Display(Name="Recipient")]
         public virtual AppUser Recipient { get; set; }
 
         public Purchase()
         {
+            Random random = new Random();
+            this.PurchaseId = random.Next(10000000);
             this.ItemDetails = new List<Models.ItemDetail>();
-            this.PurchaseUserDetail = new List<Models.PurchaseUserDetail>();
         }
     }
 }
