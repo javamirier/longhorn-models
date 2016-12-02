@@ -12,7 +12,7 @@ namespace LonghornMusic.Models
     {
         [Key]
         [Display(Name ="Purchase User Detail ID")]
-        public Int32 PUDID { get; set; }
+        public Int32 PurchaseUserDetailId { get; set; }
 
         [Display(Name = "Purchase Credit Card")]
         public string CreditCard { get; set; }
@@ -26,7 +26,7 @@ namespace LonghornMusic.Models
         public PurchaseUserDetail()
         {
             Random random = new Random();
-            this.PUDID = random.Next(10000000);
+            this.PurchaseUserDetailId = random.Next(10000000);
         }
     }
 }
