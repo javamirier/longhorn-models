@@ -11,18 +11,12 @@ namespace LonghornMusic.Models
     // You can add profile data for the user by adding more properties to your AppUser class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class AppUser : IdentityUser
     {
-        //TODO: Make sure all necessary fields are here 
         public string FName { get; set; }
         public string LName { get; set; }
-        //TODO: Make sure these are in the right place
-        //TODO: Make changes to controller to accomodate PurchaseUserDetail nav property 
         public string Zip { get; set; }
         public string State { get; set; }
         public string City { get; set; }
         public string Address { get; set; }
-        //Get rid of this and replace with 2 strings 
-        //this is fucking bullshit 
-        //public List<string> CreditCards { get; set; } 
         public string CreditCard1 { get; set; }
         public string CreditCard2 { get; set; }
         public virtual List<Review> CustomerReviews { get; set; }
@@ -34,8 +28,6 @@ namespace LonghornMusic.Models
             this.CustomerReviews = new List<Models.Review>();
             this.MusicOwned = new List<Models.Song>();
             this.OrderHistory = new List<Models.PurchaseUserDetail>();
-            //Get rid of this because its a broken piece of shit 
-            //this.CreditCards = new List<string>();
         }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<AppUser> manager)

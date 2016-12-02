@@ -11,7 +11,6 @@ namespace LonghornMusic.Models
     public class PurchaseUserDetail
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Display(Name ="Purchase User Detail ID")]
         [Required(ErrorMessage ="Missing PUD ID")]
         public Int32 PurchaseUserDetailId { get; set; }

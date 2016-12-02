@@ -10,7 +10,6 @@ namespace LonghornMusic.Models
 {
     public class Purchase
     {
-        //TODO: Add boolean value for IsGift? 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Display(Name="Purchase ID")]
@@ -18,7 +17,6 @@ namespace LonghornMusic.Models
 
         [Required(ErrorMessage="Date Missing")]
         [Display(Name="Purchase Date")]
-        //TODO: Add string format from HW7? 
         public DateTime Date { get; set; }
 
         [Required(ErrorMessage="Subtotal Missing")]
@@ -29,14 +27,9 @@ namespace LonghornMusic.Models
         [Display(Name="ItemDetails")]
         public List<ItemDetail> ItemDetails { get; set; }
 
-        //[Required(ErrorMessage="Tax Missing")]
-        //[Display(Name="Purchase Tax")]
-        //public Decimal Tax { get; set; }
-
         [Display(Name="Is Complete")]
         public bool IsComplete { get; set; }
         
-        //TODO: Make changes to controller to accomodate PurchaseUserDetail nav property
         [Display(Name="Purchase User Details")]
         public virtual List<PurchaseUserDetail> PurchaseUserDetail { get; set; }
 

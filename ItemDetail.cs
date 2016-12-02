@@ -11,7 +11,6 @@ namespace LonghornMusic.Models
     public class ItemDetail
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Display(Name="Item Detail Id")]
         public Int32 ItemDetailId { get; set; }
 

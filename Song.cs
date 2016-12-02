@@ -20,8 +20,7 @@ namespace LonghornMusic.Models
         [Display(Name = "Song Price")]
         [Required(ErrorMessage = "Missing Song Price")]
         public decimal SongPrice { get; set; }
-
-        //TODO: Have calculated fields like Revenue, NumSold <-- in controller
+        
         public decimal SongRating { get; set; }
 
         public virtual List<SongReview> SongReviews { get; set; }
@@ -42,8 +41,7 @@ namespace LonghornMusic.Models
         public virtual List<Genre> SongGenres { get; set; }
 
         public virtual List<ItemDetail> SongPurchaseDetails { get; set; }
-
-        //TODO: Jesus take the keyboard im typin blind 
+        
         public Song()
         {
             this.SongReviews = new List<Models.SongReview>();
