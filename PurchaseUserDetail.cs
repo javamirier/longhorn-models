@@ -10,7 +10,6 @@ namespace LonghornMusic.Models
 {
     public class PurchaseUserDetail
     {
-        [Key]
         [Display(Name ="Purchase User Detail ID")]
         public Int32 PurchaseUserDetailId { get; set; }
 
