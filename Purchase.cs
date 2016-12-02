@@ -18,16 +18,19 @@ namespace LonghornMusic.Models
         
         [Display(Name="Subtotal")]
         public Decimal Subtotal { get; set; }
-        
+
+        [ForeignKey("PurchaseId")]
         [Display(Name="ItemDetails")]
         public List<ItemDetail> ItemDetails { get; set; }
 
         [Display(Name="Is Complete")]
         public bool IsComplete { get; set; }
-        
+
+        [ForeignKey("PurchaseId")]
         [Display(Name="Purchase User Details")]
         public virtual PurchaseUserDetail PurchaseUserDetail { get; set; }
 
+        [ForeignKey("PurchaseId")]
         [Display(Name="Recipient")]
         public virtual AppUser Recipient { get; set; }
 

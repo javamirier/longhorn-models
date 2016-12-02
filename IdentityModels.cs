@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System.Collections.Generic;
-
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LonghornMusic.Models
 {
@@ -22,8 +22,11 @@ namespace LonghornMusic.Models
         public string CreditCard2 { get; set; }
         public string CreditCard1Type { get; set; }
         public string CreditCard2Type { get; set; }
+        [ForeignKey("Id")]
         public virtual List<Review> CustomerReviews { get; set; }
+        [ForeignKey("Id")]
         public virtual List<Song> MusicOwned { get; set; }
+        [ForeignKey("Id")]
         public virtual List<PurchaseUserDetail> OrderHistory { get; set; }
 
         public AppUser()
