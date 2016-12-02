@@ -11,7 +11,6 @@ namespace LonghornMusic.Models
     public class Purchase
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Display(Name="Purchase ID")]
         public  Int32 PurchaseId { get; set; }
         
