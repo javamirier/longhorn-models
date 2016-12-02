@@ -14,16 +14,13 @@ namespace LonghornMusic.Models
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Display(Name="Purchase ID")]
         public  Int32 PurchaseId { get; set; }
-
-        [Required(ErrorMessage="Date Missing")]
+        
         [Display(Name="Purchase Date")]
         public DateTime Date { get; set; }
-
-        [Required(ErrorMessage="Subtotal Missing")]
+        
         [Display(Name="Subtotal")]
         public Decimal Subtotal { get; set; }
-
-        [Required(ErrorMessage="Incomplete Item List")]
+        
         [Display(Name="ItemDetails")]
         public List<ItemDetail> ItemDetails { get; set; }
 
