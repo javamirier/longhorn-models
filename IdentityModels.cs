@@ -22,11 +22,11 @@ namespace LonghornMusic.Models
         public string CreditCard2 { get; set; }
         public string CreditCard1Type { get; set; }
         public string CreditCard2Type { get; set; }
-        [ForeignKey("Id")]
+        [ForeignKey("ReviewId")]
         public virtual List<Review> CustomerReviews { get; set; }
-        [ForeignKey("Id")]
+        [ForeignKey("SongId")]
         public virtual List<Song> MusicOwned { get; set; }
-        [ForeignKey("Id")]
+        [ForeignKey("PurchaseUserDetailId")]
         public virtual List<PurchaseUserDetail> OrderHistory { get; set; }
 
         public AppUser()

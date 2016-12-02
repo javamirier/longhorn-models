@@ -17,11 +17,11 @@ namespace LonghornMusic.Models
         [Display(Name = "Purchase Credit Card")]
         public string CreditCard { get; set; }
 
-        [ForeignKey("PurchaseUserDetailId")]
+        [ForeignKey("PurchaseId")]
         [Display(Name = "Purchase")]
         public Purchase Purchase { get; set; }
 
-        [ForeignKey("PurchaseUserDetailId")]
+        [ForeignKey("Id")]
         [Display(Name = "Customer")]
         public AppUser Customer { get; set; }
 
