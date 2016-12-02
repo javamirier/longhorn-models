@@ -22,7 +22,9 @@ namespace LonghornMusic.Models
         public string CreditCard2 { get; set; }
         public string CreditCard1Type { get { return getCard1Type(); } }
         public string CreditCard2Type { get { return getCard2Type(); } }
-        public virtual List<Review> CustomerReviews { get; set; }
+        public virtual List<SongReview> SongReviews { get; set; }
+        public virtual List<AlbumReview> AlbumReviews { get; set; }
+        public virtual List<ArtistReview> ArtistReviews { get; set; }
         public virtual List<Song> MusicOwned { get; set; }
         public virtual List<PurchaseUserDetail> OrderHistory { get; set; }
 
@@ -112,7 +114,7 @@ namespace LonghornMusic.Models
     {
         //Remember - the IdentityDbContext already contains a db set for Users.  If you add another one, your code will break
         //public DbSet<Product> Products { get; set; }
-                
+
         public AppDbContext()
             : base("MyDbConnection", throwIfV1Schema: false)
         {
@@ -122,7 +124,7 @@ namespace LonghornMusic.Models
         {
             return new AppDbContext();
         }
-        
+
         //TODO: Make sure all DbSets are here 
         public DbSet<AppRole> AppRoles { get; set; }
         public DbSet<Artist> Artists { get; set; }
