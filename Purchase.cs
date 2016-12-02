@@ -4,12 +4,15 @@ using System.Linq;
 using System.Web;
 using System.Data.Entity;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LonghornMusic.Models
 {
     public class Purchase
     {
         //TODO: Add boolean value for IsGift? 
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Display(Name="Purchase ID")]
         public  Int32 PurchaseId { get; set; }
 

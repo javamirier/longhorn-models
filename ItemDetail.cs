@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 
 namespace LonghornMusic.Models
 {
     public class ItemDetail
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Display(Name="Item Detail Id")]
         public Int32 ItemDetailId { get; set; }
 

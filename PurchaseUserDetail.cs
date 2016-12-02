@@ -4,11 +4,14 @@ using System.Linq;
 using System.Web;
 using System.Data.Entity;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LonghornMusic.Models
 {
     public class PurchaseUserDetail
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Display(Name ="Purchase User Detail ID")]
         [Required(ErrorMessage ="Missing PUD ID")]
         public Int32 PurchaseUserDetailId { get; set; }
