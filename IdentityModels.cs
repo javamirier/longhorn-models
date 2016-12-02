@@ -5,13 +5,14 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System.Collections.Generic;
 
-//TODO: Change the namespace here to match your project's name
+
 namespace LonghornMusic.Models
 {
     // You can add profile data for the user by adding more properties to your AppUser class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class AppUser : IdentityUser
     {
         public string FName { get; set; }
+        public string MI { get; set; }
         public string LName { get; set; }
         public string Zip { get; set; }
         public string State { get; set; }
@@ -19,6 +20,8 @@ namespace LonghornMusic.Models
         public string Address { get; set; }
         public string CreditCard1 { get; set; }
         public string CreditCard2 { get; set; }
+        public string CreditCard1Type { get; set; }
+        public string CreditCard2Type { get; set; }
         public virtual List<Review> CustomerReviews { get; set; }
         public virtual List<Song> MusicOwned { get; set; }
         public virtual List<PurchaseUserDetail> OrderHistory { get; set; }
@@ -39,11 +42,9 @@ namespace LonghornMusic.Models
 
     //NOTE: Here is your dbContext for the entire project.  There should only be ONE DbContext per project
     //Your dbContext (AppDbContext) inherits from IdentityDbContext, which inherits from the "regular" DbContext
-    //TODO: If you have an existing dbContext (it may be in your DAL folder), DELETE THE EXISTING dbContext
 
     public class AppDbContext : IdentityDbContext<AppUser>
     {
-        //TODO: Add your dbSets here.  As an example, I've included one for products
         //Remember - the IdentityDbContext already contains a db set for Users.  If you add another one, your code will break
         //public DbSet<Product> Products { get; set; }
                 

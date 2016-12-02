@@ -43,6 +43,9 @@ namespace LonghornMusic.Models
         [Display(Name = "First Name")]
         [Required(ErrorMessage = "First Name is required.")]
         public string FName { get; set; }
+
+        [Display(Name = "Middle Initial")]
+        public string MI { get; set; }
         
         [Display(Name = "Last Name")]
         [Required(ErrorMessage = "Last Name is required.")]
@@ -130,6 +133,9 @@ namespace LonghornMusic.Models
     {
         [Display(Name ="Credit Card Number")]
         public string CardNumber { get; set; }
+
+        [Display(Name = "Credit Card Type")]
+        public string CreditCardType { get; set; }
     }
 
     public class IndexViewModel
