@@ -24,7 +24,7 @@ namespace LonghornMusic.Models
         [Display(Name="Song")]
         public virtual Song Song { get; set; }
 
-        [ForeignKey("AlbumId")]
+        [ForeignKey("Album")]
         [Display(Name="Album")]
         public virtual Album Album { get; set; }
 
