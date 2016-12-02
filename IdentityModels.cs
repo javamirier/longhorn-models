@@ -95,7 +95,9 @@ namespace LonghornMusic.Models
 
         public AppUser()
         {
-            this.CustomerReviews = new List<Models.Review>();
+            this.SongReviews = new List<Models.SongReview>();
+            this.AlbumReviews = new List<Models.AlbumReview>();
+            this.ArtistReviews = new List<Models.ArtistReview>();
             this.MusicOwned = new List<Models.Song>();
             this.OrderHistory = new List<Models.PurchaseUserDetail>();
         }
